@@ -2,7 +2,11 @@
 
 // Створюємо функцію з назвою calculateExpression, яка приймає один аргумент expression
 function calculateExpression(expression) {
-  eval(expression);
+  if (eval(expression)) {
+    return expression;
+  } else {
+    return "Argument is not a string";
+  }
   //Преревіряємо чи аргумент є рядком
   //Якщо так повертаємо виконананий код
   // Якщо ні повертаємо текст "Argument is not a string"
@@ -118,7 +122,7 @@ console.log("isValueNaN(100)", isValueNaN(100)); // Виведе "The value is n
 
 // Створюємо функцію з назвою encodeURLComponent, яка приймає один аргумент - urlComponent
 function encodeURLComponent(urlComponent) {
-  urlComponent = encodeURLComponent(urlComponent);
+  return encodeURIComponent(urlComponent);
   // Використовуємо вбудовану функцію encodeURIComponent, щоб закодувати введений компонент URL.
   // Ця функція повертає закодований компонент URL, замінивши небезпечні символи на їх процентне кодування.
   // Повертаємо закодований компонент URL.
@@ -135,7 +139,7 @@ console.log(
 
 // Створюємо функцію з назвою encodeURL, яка приймає один аргумент - url
 function encodeURL(url) {
-  url = encodeURI(url);
+  return encodeURI(url);
   // Використовуємо вбудовану функцію encodeURI, щоб закодувати введений URL.
   // Ця функція повертає закодований URL, замінивши небезпечні символи на їх процентне кодування.
   // Повертаємо закодований URL.
@@ -152,6 +156,7 @@ console.log(
 
 // Створюємо функцію з назвою decodeURLComponent, яка приймає один аргумент - urlComponent
 function decodeURLComponent(urlComponent) {
+  return decodeURIComponent(urlComponent);
   // Використовуємо вбудовану функцію decodeURIComponent, щоб декодувати введений закодований компонент URL.
   // Ця функція повертає декодований компонент URL, замінивши процентне кодування символів на їх реальні значення.
   // Повертаємо декодований компонент URL.
@@ -168,7 +173,7 @@ console.log(
 
 // Створюємо функцію з назвою decodeURL, яка приймає один аргумент - url
 function decodeURL(url) {
-  url = decodeURI(url);
+  return decodeURI(url);
   // Використовуємо вбудовану функцію decodeURI, щоб декодувати введений закодований URL.
   // Ця функція повертає декодований URL, замінивши процентне кодування символів на їх реальні значення.
   // Повертаємо декодований URL.
